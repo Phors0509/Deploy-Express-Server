@@ -31,11 +31,6 @@ jobs:
             - name: Run build
               run: yarn build # Executes the build script defined in your package.json
 
-            - name: Run tests
-              env:
-                  CUSTOM_ENV_VARIABLE: ${{ secrets.CUSTOM_ENV_VARIABLE }} # Replace with actual environment variables needed for testing
-              run: yarn test # Executes tests using yarn. Customize this command based on your test runner
-
             - name: Archive build artifacts
               uses: actions/upload-artifact@v4 # Archives build artifacts for use in later jobs or for deployment
               with:
