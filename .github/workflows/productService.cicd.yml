@@ -43,10 +43,10 @@ jobs:
 
         steps:
             - name: Download build artifacts
-              uses: actions/download-artifact@v4 # Downloads artifacts from the build job
+              uses: actions/download-artifact@v4
               with:
-                  name: build # The name of the artifact to download
-                  path: ./path/to/artifacts # The path to store the downloaded artifact
+                  name: build-artifact
+                  path: ./build
 
             - name: Prepare Deployment Directories
               uses: appleboy/ssh-action@master # SSH into the server to prepare directories
