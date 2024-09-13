@@ -19,7 +19,7 @@ esbuild
                 assets: [
                     {
                         from: ["node_modules/swagger-ui-dist/*"],
-                        to: ["build/swagger-ui-dist"],
+                        to: ["build/"],
                     },
                     {
                         from: ["src/docs/swagger.json"],
@@ -42,6 +42,13 @@ esbuild
         },
     })
     .then(() => {
+        fs.copySync(
+            path.resolve(__dirname, "node_modules/swagger-ui-dist"),
+            path.resolve(__dirname, "build")
+        );
+        console.log("Swagger UI copied successfully!");
+        console.log("=========================================");
+
         fs.copySync(
             path.resolve(__dirname, "src/docs/swagger.json"),
             path.resolve(__dirname, "build/docs/swagger.json")
