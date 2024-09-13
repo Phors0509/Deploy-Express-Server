@@ -3,8 +3,8 @@ name: CI/CD Pipeline Service Product
 on:
     push:
         branches: [main]
-        paths:
-            - "src/**"
+        # paths:
+        #     - "src/**"
     pull_request:
         branches: [main]
 jobs:
