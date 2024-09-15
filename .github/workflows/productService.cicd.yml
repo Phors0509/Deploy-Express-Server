@@ -48,9 +48,6 @@ jobs:
                   name: build
                   path: ./build
 
-            - name: Add server SSH key to known hosts
-              run: ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-
             - name: Prepare Deployment Directories
               uses: appleboy/ssh-action@master
               with:
