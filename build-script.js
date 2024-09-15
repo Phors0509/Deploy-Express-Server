@@ -69,6 +69,7 @@ esbuild
         );
         console.log("package.json copied successfully!");
         console.log("=========================================");
+        ("");
 
         console.log("Build completed successfully!");
         console.log("=========================================");
