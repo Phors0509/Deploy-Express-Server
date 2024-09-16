@@ -40,6 +40,9 @@ esbuild
         define: {
             "process.env.NODE_ENV": '"production"',
         },
+        alias: {
+            "@": path.resolve(__dirname, "."),
+        },
     })
     .then(() => {
         fs.copySync(
