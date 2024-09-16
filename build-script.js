@@ -41,7 +41,7 @@ esbuild
             "process.env.NODE_ENV": '"production"',
         },
         alias: {
-            "@": path.resolve(__dirname, "."),
+            "@": path.resolve(__dirname, "./src"),
         },
     })
     .then(() => {

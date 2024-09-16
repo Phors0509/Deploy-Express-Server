@@ -18,11 +18,13 @@
         "pretty": true,
         "baseUrl": "./src",
         "paths": {
-            "@/*": ["*"]
+            "@/*": ["./*"],
+            "@models/*": ["src/models/*"]
         }
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "**/*.spec.ts"],
+    // Allow ts-node to run with tsconfig-paths
     "ts-node": {
         "require": ["tsconfig-paths/register"]
     }
