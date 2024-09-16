@@ -32,7 +32,7 @@ app.get('/docs/swagger.json', (_req, res) => {
     res.sendFile(swaggerFile);
 });
 
-console.log("App is running");
+console.log("App is running lets go");
 // Global Error Handler
 app.use(globalErrorHandler);
 
