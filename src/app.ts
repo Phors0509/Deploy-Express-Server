@@ -11,6 +11,11 @@ const swaggerFile = path.resolve(__dirname, 'docs/swagger.json');
 const swaggerData = fs.readFileSync(swaggerFile, 'utf8');
 const swaggerDocument = JSON.parse(swaggerData);
 
+const user = {
+    name: "Jajdkfkjdassasddhn",
+    age: 30
+}
+
 // Initialize express app
 const app = express();
 
@@ -27,12 +32,17 @@ RegisterRoutes(app);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+app.use('/user', (_req, res) => {
+    res.json(user);
+}
+);
+
 // Serve Swagger JSON
 app.get('/docs/swagger.json', (_req, res) => {
     res.sendFile(swaggerFile);
 });
 
-console.log("App is running lets go");
+console.log("App is running and updates will be reflected here yoyo");
 // Global Error Handler
 app.use(globalErrorHandler);
 
